@@ -1,0 +1,17 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/reactiveapp
+    username: springstudent
+    password: springstudent
+#instead of jdbc we used r2dbc
+#r2dbc does not support auto ddl
+  liquibase:
+    change-log: classpath:db/changelog/changelog.xml
+    enabled: true
+    url: jdbc:mysql://localhost:3306/reactiveapp
+    user: springstudent
+    password: springstudent
+#in the traditional application we provide to liquibase only the change-log url,
+#and it automatically recognizes the database connection when we are using the jdb,
+#but as long as we are using the r2dbc in our connection url, we need to provide it manually,
+#because liquibase uses jdbc

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="V1" author="adam">
+        <createTable tableName="students">
+            <!--    with my sql we need to use the type as follows        -->
+            <column name="id" type="INT(11)" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="firstname" type="VARCHAR(256)"/>
+            <column name="lastname" type="VARCHAR(256)"/>
+            <column name="age" type="INT(11)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
